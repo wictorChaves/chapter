@@ -10,12 +10,12 @@ import { map }                                                                  
 export class UserLoggedGuard implements CanActivate {
 
   constructor(
-    public  fireAuth: AngularFireAuth,
-    private router  : Router
+    public  angularFireAuth: AngularFireAuth,
+    private router         : Router
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-    return this.fireAuth.user.pipe(map(u => {
+    return this.angularFireAuth.user.pipe(map(u => {
       return (u == null) ? this.router.parseUrl('/login'): true;
     }));
   }

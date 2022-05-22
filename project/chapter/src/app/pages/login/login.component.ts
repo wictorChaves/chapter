@@ -11,24 +11,16 @@ import * as firebase         from 'firebase/app';
 export class LoginComponent implements OnInit {
 
   constructor(
-    public  auth  : AngularFireAuth,
-    private router: Router
+    public  angularFireAuth: AngularFireAuth,
+    private router         : Router
   ) { }
 
   ngOnInit() { }
 
   login() {
-    this.auth.auth.signInWithPopup(this.newGoogleAuthProvider()).then(userCredential => {
+    this.angularFireAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).then(user => {
       this.router.navigateByUrl('/chat');
-    }, error => { this.logError(error) });
-  }
-
-  newGoogleAuthProvider() {
-    return new firebase.auth.GoogleAuthProvider();
-  }
-
-  logError(error: any) {
-    console.log(error);
+    }, error => { console.log(error); });
   }
 
 }
