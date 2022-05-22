@@ -68,7 +68,7 @@
         .send-mensage {
             width: 100%;
             display: flex;
-            padding: 10px 20px;
+            padding: 5px 20px;
             box-sizing: border-box;
             .balloon-mensage {
                 background-color: #d9fdd3;
@@ -82,12 +82,15 @@
                 font-family: system-ui;
                 padding: 5px 10px;
                 margin-left: auto;
+                .member {
+                    display: none;
+                }
             }
         }
         .received-mensage {
             width: 100%;
             display: flex;
-            padding: 10px 20px;
+            padding: 5px 20px;
             box-sizing: border-box;
             .balloon-mensage {
                 .member {
@@ -132,11 +135,14 @@
             white-space: pre-wrap;
             outline: none;
         }
-        svg {
-            opacity: 0.9;
-            color: #54656f;
-            padding: 18px 18px 18px 9px;
-            cursor: pointer;
+        button {
+            display: contents;
+            svg {
+                opacity: 0.9;
+                color: #54656f;
+                padding: 18px 18px 18px 9px;
+                cursor: pointer;
+            }
         }
     }
 }

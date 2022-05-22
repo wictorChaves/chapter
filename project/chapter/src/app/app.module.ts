@@ -7,7 +7,11 @@ import { AngularFireModule }        from '@angular/fire';
 import { AngularFirestoreModule }   from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule }    from '@angular/fire/auth';
-import { ChatComponent } from './pages/chat/chat.component';
+
+import { ChatComponent }            from './pages/chat/chat.component';
+import { LoginComponent }           from './pages/login/login.component';
+
+import { ReactiveFormsModule }                      from '@angular/forms';
 
 const config = {
   apiKey           : "AIzaSyDEggwcfASRCOd_sn1cgLFNUoMbslU72Q0",
@@ -21,15 +25,19 @@ const config = {
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
     AngularFireModule.initializeApp(config),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
